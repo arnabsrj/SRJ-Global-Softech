@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // You can use any icon library
-import  { logo } from "../assets/srjglobal.png";
+import logo from "../assets/srjglobal.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
