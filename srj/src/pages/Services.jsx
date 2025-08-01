@@ -50,22 +50,22 @@ const services = [
           Crafting Engaging Website Experiences
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we specialize in building responsive,
-          elegant, and SEO-friendly websites tailored for your business goals.
-          Whether you need a business portfolio, e-commerce platform, or landing
-          page — we design with purpose. We combine sleek UI/UX design with
+          At SRJ Global Softech, we specialize in building responsive, elegant,
+          and SEO-friendly websites tailored to your business goals. Whether you
+          need a business portfolio, an e-commerce platform, or a landing page —
+          we design with purpose. Our team combines sleek UI/UX design with
           robust front-end development using the latest tech stacks. Our mission
-          is to ensure every visitor becomes a customer. Get scalable, secure,
-          and modern websites that adapt seamlessly across all screen sizes and
+          is to turn every visitor into a customer. Get scalable, secure, and
+          modern websites that adapt seamlessly across all screen sizes and
           devices.
         </p>
       </>
     ),
     provided: [
-      "Responsive web design",
-      "Business portfolio websites",
-      "E-commerce platforms",
-      "Landing pages",
+      "Responsive Web Design",
+      "Business Portfolio Websites",
+      "E-Commerce Platforms",
+      "Landing Pages",
       "Modern UI/UX design",
       "Front-end development",
       "SEO-friendly website architecture",
@@ -87,13 +87,13 @@ const services = [
           Make Your Brand Visually Stand Out
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions offers professional graphic design services
-          tailored to your business goals. Our creative team designs logos,
-          flyers, social media graphics, business cards, brochures, and much
-          more. Every element we design focuses on visual appeal, messaging
-          clarity, and brand alignment. Whether it’s for digital or print media,
-          we ensure stunning designs that captivate your audience. Let us bring
-          your ideas to life through design that communicates and converts.
+          At SRJ Global Softech, we offer professional graphic design services
+          tailored to your business goals. Our creative team crafts logos,
+          flyers, social media graphics, business cards, brochures, and more —
+          all with a focus on visual appeal, message clarity, and brand
+          consistency. Whether for digital or print media, we deliver stunning
+          designs that captivate your audience. Let us bring your ideas to life
+          with designs that communicate and convert.
         </p>
       </>
     ),
@@ -121,13 +121,13 @@ const services = [
           Crafting Logos that Define Your Brand
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions specializes in designing logos that speak your
-          brand's story. We create custom logos for startups, businesses, and
-          enterprises across various industries. Whether you need a minimal
-          icon, illustrative branding, or corporate identity, our designers work
-          closely with you to deliver a timeless logo that resonates with your
-          target audience. Start your branding journey with us and make a
-          lasting first impression through design.
+          At SRJ Global Softech, we specialize in designing logos that tell your
+          brand’s story. We create custom logos for startups, businesses, and
+          enterprises across diverse industries. Whether you need a minimal
+          icon, an illustrative mark, or a complete corporate identity, our
+          designers collaborate closely with you to deliver a timeless logo that
+          resonates with your audience. Begin your branding journey with us —
+          and make a lasting first impression through powerful design.
         </p>
       </>
     ),
@@ -155,14 +155,14 @@ const services = [
           Tailored Websites Built to Impress
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions specializes in creating modern, responsive
-          websites that align perfectly with your business goals. From portfolio
-          sites to complex service pages, we handle it all. Our team focuses on
-          clean UI/UX design, fast loading, SEO optimization, and mobile-first
-          responsiveness to make sure your customers have a seamless experience.
-          Whether you're launching a startup, redesigning your brand, or need an
-          e-commerce platform — we've got the tools and talent to bring your
-          vision online.
+          SRJ Global Softech specializes in creating modern, responsive websites
+          that align seamlessly with your business goals. From portfolio sites
+          to complex service pages, we handle it all. Our team focuses on clean
+          UI/UX design, fast loading speeds, SEO optimization, and mobile-first
+          responsiveness to ensure your customers enjoy a seamless browsing
+          experience. Whether you're launching a startup, refreshing your brand,
+          or building an e-commerce platform — we have the tools and talent to
+          bring your vision to life online.
         </p>
       </>
     ),
@@ -190,14 +190,14 @@ const services = [
           Build a Website that Converts
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions specializes in creating stunning, responsive,
-          and lightning-fast websites that drive business results. Whether you
-          need a personal blog or a complex enterprise site, we have you
-          covered. We use the latest web technologies including React.js,
-          Tailwind CSS, and modern backend stacks to ensure your site is
-          scalable, secure, and SEO-optimized from the start. Your digital
-          presence begins with a strong, well-crafted website — let us help you
-          make a great first impression online.
+          At SRJ Global Softech, we specialize in creating stunning, responsive,
+          and lightning-fast websites that deliver real business results.
+          Whether you need a personal blog or a complex enterprise site, we've
+          got you covered. We leverage the latest web technologies — including
+          React.js, Tailwind CSS, and modern backend stacks — to build scalable,
+          secure, and SEO-optimized websites from day one. Your digital presence
+          starts with a strong, well-crafted site — and we’re here to help you
+          make a powerful first impression online.
         </p>
       </>
     ),
@@ -225,13 +225,14 @@ const services = [
           Build & Grow Your Online Store
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we design high-performing e-commerce
-          websites that offer seamless customer experiences. Whether you’re
-          selling 10 products or 10,000, we build scalable and user-friendly
-          platforms. From secure payment gateways and inventory management to
-          order tracking and shipping integration — we’ve got your store
-          covered. We offer WooCommerce, Shopify, and fully custom-built
-          solutions to suit your unique requirements and budget.
+          At SRJ Global Softech, we design high-performing e-commerce websites
+          that deliver seamless shopping experiences. Whether you're selling 10
+          products or 10,000, we build scalable, user-friendly platforms
+          tailored to your needs. From secure payment gateways and inventory
+          management to order tracking and shipping integrations — your store is
+          fully covered. We offer solutions built with WooCommerce, Shopify, or
+          completely custom development to match your unique requirements and
+          budget.
         </p>
       </>
     ),
@@ -259,21 +260,19 @@ const services = [
           App website near me
         </h2>
         <p className="text-gray-600 text-sm">
-          Welcome to Srj softech solutions, a leading web design and mobile app
-          development company in Delhi. We specialize in providing custom
-          solutions to businesses of all sizes, ranging from small startups to
-          large enterprises. Our team of expert designers and developers work
-          closely with our clients to understand their unique requirements and
-          provide tailored solutions to meet their specific needs. Being a main
-          versatile improvement organization, Ambeytech gives an adaptable and
-          vigorous Android portable application advancement arrangement. We
-          proffer complete start to finish versatile application improvement
-          administrations to meet your portable application's requesting
-          execution. Our experienced engineers perform impeccably to convince
-          our clients to return. Based on the layout and appraisal stage, we
-          hand over custom iOS portable application improvement arrangements
-          with complete business rationale, specialized versatility, and
-          proficient execution.
+          Welcome to SRJ Global Softech — a leading web design and mobile app
+          development company based in Delhi. We specialize in delivering custom
+          digital solutions for businesses of all sizes, from startups to large
+          enterprises. Our expert team of designers and developers works closely
+          with clients to understand their unique requirements and craft
+          tailored solutions that drive results. As a trusted mobile app
+          development partner, we provide robust and flexible Android and iOS
+          application development services. From strategy and UI/UX design to
+          development and deployment, we offer end-to-end app solutions that
+          ensure high performance, scalability, and user satisfaction. Whether
+          you're launching your first app or scaling an existing one, our
+          experienced engineers are committed to delivering quality that brings
+          clients back to us — time and again.
         </p>
       </>
     ),
@@ -301,13 +300,13 @@ const services = [
           Reliable WordPress Experts for All Business Types
         </h2>
         <p className="text-gray-600 text-sm">
-          Whether you're starting a blog, a business site, or an e-commerce
-          store, our WordPress developers ensure you get a visually appealing
-          and high-performance website. We offer custom theme development,
-          plugin integration, WooCommerce setup, and SEO-optimized architecture
-          — giving you full control over your site. From hosting and backups to
-          scalability and security, we take care of every technical detail, so
-          you can focus on your business.
+          Whether you're starting a blog, launching a business site, or building
+          an e-commerce store, our WordPress developers deliver visually
+          appealing, high-performance websites. We provide custom theme
+          development, plugin integration, WooCommerce setup, and SEO-optimized
+          architecture — giving you full control over your site. From hosting
+          and backups to scalability and security, we handle every technical
+          detail so you can focus on growing your business.
         </p>
       </>
     ),
@@ -335,14 +334,14 @@ const services = [
           Strategic Digital Marketing for Every Business
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we create goal-driven digital marketing
-          strategies to build your online presence, generate leads, and maximize
-          ROI. We cover everything from Google Ads to Social Media Marketing.
-          Our expert marketers combine content, design, data analytics, and
-          automation to ensure your brand stands out on every digital platform.
-          Whether you're a startup or a growing business, our tailor-made
-          marketing campaigns are designed to increase visibility, drive
-          traffic, and convert visitors into loyal customers.
+          At SRJ Global Softech, we craft goal-driven digital marketing
+          strategies to strengthen your online presence, generate quality leads,
+          and maximize ROI. From Google Ads to social media marketing, we cover
+          it all. Our expert marketers blend content, design, data analytics,
+          and automation to ensure your brand stands out across every digital
+          platform. Whether you're a startup or a growing business, our
+          tailor-made campaigns are built to boost visibility, drive traffic,
+          and turn visitors into loyal customers.
         </p>
       </>
     ),
@@ -370,13 +369,14 @@ const services = [
           SEO Solutions to Grow Your Business
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions delivers results-driven SEO services for
-          businesses of all sizes. We improve your search engine rankings using
-          modern, ethical strategies that work. Our SEO experts perform keyword
-          research, on-page optimization, technical SEO audits, content
-          planning, and authority building to ensure your website stays
-          competitive. Let us increase your visibility, website traffic, and
-          qualified leads through sustainable and scalable SEO campaigns.
+          At SRJ Global Softech, we deliver results-driven SEO solutions for
+          businesses of all sizes. Our team improves your search engine rankings
+          using modern, ethical strategies that generate lasting results. We
+          conduct in-depth keyword research, on-page optimization, technical SEO
+          audits, content planning, and authority building to keep your website
+          competitive. Let us help you boost visibility, drive targeted traffic,
+          and generate qualified leads through sustainable, scalable SEO
+          campaigns.
         </p>
       </>
     ),
@@ -404,12 +404,12 @@ const services = [
           Drive Targeted Traffic with Strategic PPC Campaigns
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we help you reach the right audience at the
-          right time with our expertly managed Pay-Per-Click (PPC) advertising
-          services. From Google Ads to social media platforms, we craft
-          data-driven campaigns that maximize ROI, increase conversions, and
-          keep your ad spend efficient and impactful. Let us boost your
-          visibility and grow your business through targeted PPC strategies.
+          At SRJ Global Softech, we help you reach the right audience at the
+          right time through expertly managed Pay-Per-Click (PPC) campaigns.
+          From Google Ads to social media platforms, we craft data-driven
+          strategies that maximize ROI, boost conversions, and make every ad
+          dollar count. Let us increase your visibility and drive business
+          growth with highly targeted and cost-effective PPC advertising.
         </p>
       </>
     ),
@@ -437,14 +437,15 @@ const services = [
           SEO-Driven & Engaging Content Writing
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we create tailored content that speaks your
-          brand's voice. Whether it’s blog posts, web pages, social media
-          content, or SEO articles – our writers make your brand stand out. We
-          follow a thorough research process and SEO best practices to ensure
-          your content not only attracts but converts. Every word is curated to
-          match your business goals. Trust us to provide plagiarism-free,
-          engaging, and targeted content that delivers value to your audience
-          and helps rank your website higher on search engines.
+          At SRJ Global Softech, we craft tailored content that reflects your
+          brand’s voice and resonates with your audience. Whether it’s blog
+          posts, web pages, social media content, or SEO articles — our writers
+          help your brand stand out. We follow a thorough research process and
+          adhere to SEO best practices to ensure your content not only attracts
+          visitors but also drives conversions. Every word is carefully curated
+          to align with your business goals. Count on us for plagiarism-free,
+          engaging, and targeted content that delivers real value and improves
+          your search engine rankings.
         </p>
       </>
     ),
@@ -472,13 +473,13 @@ const services = [
           Reliable Hosting for Every Website
         </h2>
         <p className="text-gray-600 text-sm">
-          At SRJ Softech Solutions, we provide high-speed, secure, and
-          budget-friendly web hosting services tailored to meet the needs of
-          individuals, startups, and enterprises. Whether you're launching a
-          business website or need robust cloud solutions, our hosting plans
-          include powerful features like SSD storage, free SSL, and automatic
-          backups. Enjoy 99.9% uptime, fast load times, and scalable
-          infrastructure — all with expert technical support available 24/7.
+          At SRJ Global Softech, we offer high-speed, secure, and
+          budget-friendly web hosting solutions tailored for individuals,
+          startups, and enterprises alike. Whether you're launching a website or
+          need robust cloud infrastructure, our hosting plans come packed with
+          powerful features — including SSD storage, free SSL certificates, and
+          automatic backups. Enjoy 99.9% uptime, lightning-fast load times, and
+          scalable resources — all backed by 24/7 expert technical support.
         </p>
       </>
     ),
@@ -506,14 +507,16 @@ const services = [
           Bulk SMS Solutions Near You
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions offers fast and reliable Bulk SMS Services to
-          enhance your customer communication. Whether you are promoting a
-          product or sending important updates, our SMS gateway ensures delivery
-          at scale. We serve all industries with smart campaign strategies and
-          instant delivery. From OTPs to offers, stay connected with your
-          customers in real time. Choose from Promotional or Transactional SMS
-          services with high deliverability and secure APIs. Our platform is
-          scalable, affordable, and backed by 24/7 technical support.
+          SRJ Global Softech offers fast, reliable Bulk SMS services to enhance
+          your customer communication. Whether you're promoting a product or
+          sending critical updates, our robust SMS gateway ensures high-speed
+          delivery at scale. We cater to businesses across all industries with
+          smart campaign strategies and real-time message delivery. From OTPs
+          and alerts to promotional offers, stay connected with your audience
+          instantly. Choose between Promotional and Transactional SMS services —
+          both powered by secure APIs and high deliverability. Our platform is
+          scalable, affordable, and supported by 24/7 expert technical
+          assistance.
         </p>
       </>
     ),
@@ -541,13 +544,14 @@ const services = [
           Supercharge Customer Engagement
         </h2>
         <p className="text-gray-600 text-sm">
-          Our WhatsApp Advertisement Software helps you reach thousands of
-          customers with just one click. Automate messages, personalize
-          campaigns, and track responses from one dashboard. Whether you run a
-          small business or a large enterprise, our tool gives you the power to
-          build trust and boost conversions directly through WhatsApp — the
-          world’s most used messaging app. Schedule campaigns, manage contacts,
-          send images, PDFs, links, and stay compliant — all from your PC.
+          Our WhatsApp advertising tool empowers you to connect with thousands
+          of customers in just one click. Automate messaging, personalize
+          campaigns, and track engagement — all from a single, easy-to-use
+          dashboard. Whether you're a small business or a large enterprise, our
+          software helps you build trust and drive conversions through WhatsApp
+          — the world’s most popular messaging platform. Schedule campaigns,
+          manage contacts, send images, PDFs, links, and stay fully compliant —
+          all from your desktop.
         </p>
       </>
     ),
@@ -575,13 +579,15 @@ const services = [
           Domain Registration Made Easy
         </h2>
         <p className="text-gray-600 text-sm">
-          SRJ Softech Solutions helps you find and register the perfect domain
-          name for your business, blog, or brand. We offer domain extensions
-          including .com, .in, .net, and more. We provide hassle-free domain
-          management, renewal alerts, and domain forwarding to ensure your brand
-          is always online and protected. Our platform is beginner-friendly, yet
-          powerful enough for professionals. Get your domain and start building
-          your digital presence today.
+          At SRJ Global Softech, we help you find and register the perfect
+          domain name for your business, blog, or brand. Choose from a wide
+          range of domain extensions, including .com, .in, .net, and more. Our
+          hassle-free domain management includes renewal alerts, domain
+          forwarding, and security features — ensuring your brand stays online
+          and protected. Whether you're a beginner or a seasoned professional,
+          our platform makes domain registration easy, reliable, and efficient.
+          Secure your domain today and start building your digital presence with
+          confidence.
         </p>
       </>
     ),
@@ -678,7 +684,7 @@ const Services = () => {
                   </button>
                   <button
                     onClick={() => setViewMode("services")}
-                    className={`px-6 py-2 text-sm sm:text-base transition font-medium focus:outline-none ${
+                    className={`px-5 sm:px-6 py-2 text-sm sm:text-base transition font-medium focus:outline-none ${
                       viewMode === "services"
                         ? "bg-sky-600 text-white shadow"
                         : "text-sky-600 hover:bg-sky-200 dark:hover:bg-[#334155]"
@@ -700,7 +706,10 @@ const Services = () => {
                       ) : (
                         <ul className="list-disc text-left list-inside space-y-2 animate-fade-in transition-opacity duration-500 max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-sky-400 scrollbar-track-transparent">
                           {services[selected].provided.map((item, idx) => (
-                            <li key={idx} className="tracking-wide text-base sm:text-lg">
+                            <li
+                              key={idx}
+                              className="tracking-wide text-base sm:text-lg capitalize"
+                            >
                               {item}
                             </li>
                           ))}

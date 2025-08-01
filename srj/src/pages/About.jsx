@@ -98,8 +98,8 @@ const About = () => {
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
             Our site developers give master web application advancement and
-            website architecture administrations to our clients. SRJ Softech
-            Solutions offers an assortment of web composition and improvement
+            website architecture administrations to our clients. SRJ Global
+            Softech offers an assortment of web composition and improvement
             administrations, from making portable web advancement arrangements
             and responsive web architectures, to building custom web based
             business and intranet encounters utilizing the most recent and

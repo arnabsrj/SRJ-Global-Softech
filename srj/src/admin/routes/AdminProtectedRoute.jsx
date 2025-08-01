@@ -1,22 +1,3 @@
-// import React from "react";
-// import { Navigate, useLocation } from "react-router-dom";
-
-// const AdminProtectedRoute = ({ children }) => {
-//   const token = localStorage.getItem("adminToken");
-//   const location = useLocation();
-
-//   // If token is present, render the protected component
-//   if (token) {
-//     return children;
-//   }
-
-//   // If not authenticated, redirect to login and preserve route info
-//   return <Navigate to="/admin/login" state={{ from: location }} replace />;
-// };
-
-// export default AdminProtectedRoute;
-
-
 import React, { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import axios from "axios";

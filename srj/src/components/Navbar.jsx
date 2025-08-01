@@ -29,6 +29,7 @@ const Navbar = () => {
           <img
             src="src/assets/srjglobal.png"
             alt="SRJ Logo"
+            loading="lazy"
             className="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] drop-shadow-md transition-transform duration-300 group-hover:scale-105"
           />
           <h1 className="sm:text-2xl font-bold tracking-wide drop-shadow-sm">

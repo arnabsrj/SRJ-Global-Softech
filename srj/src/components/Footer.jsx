@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
   FaWhatsapp,
   FaCommentDots,
+  FaPinterest,
+  FaYoutube,
   FaGoogle,
 } from "react-icons/fa";
 import { MdOutlineSmartToy } from "react-icons/md";
@@ -21,10 +23,7 @@ const Footer = () => {
         {/* Logo & Tagline */}
         <div>
           {/* Logo and Brand */}
-          <NavLink
-            to="/"
-            className="flex items-center sm:gap-3 group"
-          >
+          <NavLink to="/" className="flex items-center sm:gap-3 group">
             <img
               src="src/assets/srjglobal.png"
               alt="SRJ Logo"
@@ -41,18 +40,60 @@ const Footer = () => {
             mobile apps & e-commerce platforms for growing brands.
           </p>
           <div className="flex gap-5 mt-8">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGoogle].map(
-              (Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
-                  aria-label={`Social Icon ${i + 1}`}
-                >
-                  <Icon className="sm:text-2xl text-lg" />
-                </a>
-              )
-            )}
+            <a
+              href="https://www.instagram.com/srjglobalsoftech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="sm:text-2xl text-lg" />
+            </a>
+            <a
+              href="https://in.pinterest.com/srjsoftechsolutions/_pins/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="Pinterest"
+            >
+              <FaPinterest className="sm:text-2xl text-lg" />
+            </a>
+            <a
+              href="https://www.youtube.com/@srjglobalsoftech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="YouTube"
+            >
+              <FaYoutube className="sm:text-2xl text-lg" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61577599466653"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="Facebook"
+            >
+              <FaFacebookF className="sm:text-2xl text-lg" />
+            </a>
+            <a
+              href="https://x.com/srjsoftechsols"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="Twitter"
+            >
+              <FaXTwitter className="sm:text-2xl text-lg" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/srj-global-softech/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn className="sm:text-2xl text-lg" />
+            </a>
           </div>
         </div>
 

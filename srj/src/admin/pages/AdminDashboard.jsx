@@ -102,11 +102,13 @@ const AdminDashboard = () => {
             <img
               src="/src/assets/srjglobal.png"
               alt="SRJ Logo"
+              loading="lazy"
               className="w-14 h-14 drop-shadow-md"
             />
             <h1 className="text-xl font-bold tracking-wide">
               <span className="text-white">SRJ</span>
               <span className="text-[#0A49D9]"> Global</span>
+              <span className="text-white"> Softech</span>
             </h1>
           </NavLink>
           {/* Close button for mobile */}
