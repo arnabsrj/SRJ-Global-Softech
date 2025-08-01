@@ -14,6 +14,7 @@ import { MdOutlineSmartToy } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import AdPopup from "../components/AdPopup";
 import Chatbot from "./Chatbot";
+import logo from "../assets/srjglobal.png";
 
 const Footer = () => {
   const [chatbotOpen, setChatbotOpen] = useState(false);
@@ -25,7 +26,7 @@ const Footer = () => {
           {/* Logo and Brand */}
           <NavLink to="/" className="flex items-center sm:gap-3 group">
             <img
-              src="src/assets/srjglobal.png"
+              src= {logo}
               alt="SRJ Logo"
               className="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] drop-shadow-md transition-transform duration-300 group-hover:scale-105"
             />

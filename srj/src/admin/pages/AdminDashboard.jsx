@@ -8,6 +8,7 @@ import Contacts from "../components/Contacts";
 import axios from "axios";
 import { LogOut, Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/srjglobal.png"; 
 
 const AdminDashboard = () => {
   const username = localStorage.getItem("adminUser");
@@ -100,7 +101,7 @@ const AdminDashboard = () => {
         <div className="flex justify-between items-center mb-6">
           <NavLink to="" className="flex items-center gap-2">
             <img
-              src="/src/assets/srjglobal.png"
+              src= {logo}
               alt="SRJ Logo"
               loading="lazy"
               className="w-14 h-14 drop-shadow-md"
