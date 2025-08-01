@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // You can use any icon library
+import  { logo } from "src/assets/srjglobal.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
           onClick={closeMenu}
         >
           <img
-            src="src/assets/srjglobal.png"
+            src= {logo}
             alt="SRJ Logo"
             loading="lazy"
             className="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] drop-shadow-md transition-transform duration-300 group-hover:scale-105"
