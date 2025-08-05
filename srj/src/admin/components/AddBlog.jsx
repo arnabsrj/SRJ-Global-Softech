@@ -1,18 +1,35 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Plus } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Image } from 'lucide-react';
+
+// Utility to generate slug
+const slugify = (text) =>
+  text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "") // Remove non-word characters
+    .replace(/[\s_-]+/g, "-") // Replace spaces and underscores with -
+    .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
 
 const AddBlog = () => {
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
+  const [slug, setSlug] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [description, setDescription] = useState("");
   const [hashtags, setHashtags] = useState("");
   const [images, setImages] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef(null);
+
+  // Auto-generate slug from title
+  useEffect(() => {
+    setSlug(slugify(title));
+  }, [title]);
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
@@ -21,13 +38,15 @@ const AddBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const formData = new FormData();
     formData.append("author", author);
     formData.append("title", title);
+    formData.append("slug", slug);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
     formData.append("hashtags", hashtags);
-
     images.forEach((img) => formData.append("images", img));
 
     try {
@@ -38,38 +57,36 @@ const AddBlog = () => {
 
       if (!res.ok) throw new Error("Failed to submit blog");
 
-      toast.success("Blog added successfully!");
+      toast.success("✅ Blog added successfully!");
 
+      // Reset fields
       setAuthor("");
       setTitle("");
+      setSlug("");
       setSubtitle("");
       setDescription("");
       setHashtags("");
       setImages([]);
     } catch (err) {
       console.error(err);
-      toast.error("Blog submission failed.");
+      toast.error("❌ Blog submission failed.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  const triggerImageUpload = () => {
-    fileInputRef.current.click();
-  };
+  const triggerImageUpload = () => fileInputRef.current.click();
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto mt-10">
-      <h2 className="text-2xl font-semibold mb-6">Add New Blog</h2>
+    <div className="bg-white p-8 rounded-xl shadow-md max-w-5xl mx-auto mt-10">
+      <h1 className="text-3xl font-bold text-blue-800 mb-8"> Add Blog</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Image Upload Section */}
-        <div>
-          <label className="block mb-1 font-medium">Upload Images</label>
+      <form onSubmit={handleSubmit} className="space-y-8">
+        {/* Upload Images */}
+        <Section title=" Upload Images">
           <div className="flex flex-wrap gap-4">
-            {images.map((img, index) => (
-              <div
-                key={index}
-                className="w-24 h-24 border rounded overflow-hidden relative"
-              >
+            {images.map((img, idx) => (
+              <div key={idx} className="w-24 h-24 rounded overflow-hidden border relative">
                 <img
                   src={URL.createObjectURL(img)}
                   alt="preview"
@@ -79,7 +96,7 @@ const AddBlog = () => {
             ))}
             <div
               onClick={triggerImageUpload}
-              className="w-24 h-24 border-2 border-dashed border-gray-400 flex items-center justify-center cursor-pointer rounded hover:border-blue-400 transition"
+              className="w-24 h-24 border-2 border-dashed border-gray-400 flex items-center justify-center cursor-pointer rounded hover:border-blue-500 transition"
             >
               <Plus className="text-gray-500" />
             </div>
@@ -92,81 +109,102 @@ const AddBlog = () => {
               onChange={handleImageChange}
             />
           </div>
-        </div>
+        </Section>
 
-        {/* Author */}
-        <div>
-          <label className="block mb-1 font-medium">Author Name</label>
-          <input
-            type="text"
+        {/* Author Info */}
+        <Section title=" Author Info">
+          <InputField
+            label="Author Name"
             value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            onChange={setAuthor}
             required
-            className="border p-2 w-full rounded"
           />
-        </div>
+        </Section>
 
-        {/* Title */}
-        <div>
-          <label className="block mb-1 font-medium">Title</label>
-          <input
-            type="text"
+        {/* Blog Info */}
+        <Section title=" Blog Details">
+          <InputField
+            label="Blog Title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={setTitle}
             required
-            className="border p-2 w-full rounded"
           />
-        </div>
 
-        {/* Subtitle */}
-        <div>
-          <label className="block mb-1 font-medium">Subtitle</label>
-          <input
-            type="text"
+          <InputField
+            label="Slug (Auto-generated)"
+            value={slug}
+            readOnly
+            note="Generated automatically from title"
+          />
+
+          <InputField
+            label="Subtitle"
             value={subtitle}
-            onChange={(e) => setSubtitle(e.target.value)}
-            className="border p-2 w-full rounded"
+            onChange={setSubtitle}
           />
-        </div>
 
-        {/* Hashtags */}
-        <div>
-          <label className="block mb-1 font-medium">Hashtags</label>
-          <input
-            type="text"
+          <InputField
+            label="Hashtags"
             value={hashtags}
-            onChange={(e) => setHashtags(e.target.value)}
+            onChange={setHashtags}
             placeholder="e.g. #ai, #tech, #coding"
-            className="border p-2 w-full rounded"
+            note="Separate with commas or use #"
           />
-          <p className="text-xs text-gray-500 mt-1">
-            Separate with commas or use #
-          </p>
-        </div>
+        </Section>
 
         {/* Description */}
-        <div>
-          <label className="block mb-1 font-medium">Description</label>
+        <Section title=" Description">
           <ReactQuill
             theme="snow"
             value={description}
             onChange={setDescription}
             className="bg-white"
           />
-        </div>
+        </Section>
 
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Add Blog
-        </button>
+        {/* Submit Button */}
+        <div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`bg-blue-600 text-white px-6 py-3 rounded-lg font-medium text-lg transition ${
+              isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+            }`}
+          >
+            {isSubmitting ? "Submitting..." : "Publish Blog"}
+          </button>
+        </div>
       </form>
 
-      {/* Toast Container */}
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
+
+// Custom components
+const Section = ({ title, children }) => (
+  <div>
+    <h3 className="text-lg font-semibold text-gray-800 mb-4">{title}</h3>
+    {children}
+  </div>
+);
+
+const InputField = ({ label, value, onChange, required = false, placeholder, note, readOnly = false }) => (
+  <div className="mb-4">
+    <label className="block font-medium mb-1 text-gray-700">{label}</label>
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange && onChange(e.target.value)}
+      required={required}
+      readOnly={readOnly}
+      placeholder={placeholder}
+      className={`border border-gray-300 p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+        readOnly ? "bg-gray-100 cursor-not-allowed" : ""
+      }`}
+    />
+    {note && <p className="text-xs text-gray-500 mt-1">{note}</p>}
+  </div>
+);
 
 export default AddBlog;

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { FaBlog, FaUsers, FaServicestack, FaUserShield } from "react-icons/fa";
 import { MdOutlineContactPhone } from "react-icons/md";
 import { motion } from "framer-motion";
 import AddBlog from "../components/AddBlog";
 import YourBlogs from "../components/YourBlogs";
 import Contacts from "../components/Contacts";
 import axios from "axios";
-import { LogOut, Menu, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
-import logo from "../../assets/srjglobal.png"; 
+import Sidebar from "../components/Sidebar";
+import Topbar from "../components/Topbar";
+import { FaBlog, FaServicestack } from "react-icons/fa";
 
 const AdminDashboard = () => {
   const username = localStorage.getItem("adminUser");
@@ -29,7 +28,6 @@ const AdminDashboard = () => {
         console.error("Failed to fetch data", error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -38,177 +36,103 @@ const AdminDashboard = () => {
     window.location.href = "/admin";
   };
 
-  const SidebarContent = () => (
-    <nav className="space-y-2 text-sm sm:text-base font-medium">
-      {[
-        { label: "Dashboard", icon: <FaUserShield />, key: "dashboard" },
-        { label: "Add Blogs", icon: <FaBlog />, key: "addBlog" },
-        { label: "Your Blogs", icon: <FaUsers />, key: "yourBlogs" },
-        { label: "Service Contacts", icon: <FaServicestack />, key: "contacts" },
-        { label: "Logout", icon: <LogOut />, key: "logout" },
-      ].map((item) => (
-        <div
-          key={item.key}
-          onClick={() => {
-            if (item.key === "logout") {
-              handleAdminLogout();
-            } else {
-              setView(item.key);
-              setIsDrawerOpen(false); // Close drawer on click
-            }
-          }}
-          className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all duration-200
-          ${
-            view === item.key
-              ? "bg-white/10 text-cyan-300 font-semibold"
-              : "hover:bg-white/10 text-white hover:text-cyan-200"
-          }`}
-        >
-          <span className="text-lg">{item.icon}</span>
-          <span>{item.label}</span>
-        </div>
-      ))}
-    </nav>
-  );
-
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen font-sans bg-gradient-to-tr from-white via-[#eef2ff] to-[#f0f4ff]">
-      {/* Mobile Drawer */}
-      <div className="lg:hidden p-4 flex items-center justify-between">
-        <button
-          className="text-blue-900"
-          onClick={() => setIsDrawerOpen(true)}
-        >
-          <Menu size={28} />
-        </button>
-        <span className="text-xl font-semibold text-gray-700">Admin Dashboard</span>
+    <div className="flex h-screen overflow-hidden font-sans bg-gradient-to-tr from-white via-[#eef2ff] to-[#f0f4ff]">
+      {/* Sidebar - Fixed */}
+      <div className="w-64 fixed inset-y-0 z-20">
+        <Sidebar
+          view={view}
+          setView={setView}
+          handleAdminLogout={handleAdminLogout}
+          isDrawerOpen={isDrawerOpen}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />
       </div>
 
-      {/* Drawer Backdrop */}
-      {isDrawerOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40"
-          onClick={() => setIsDrawerOpen(false)}
-        ></div>
-      )}
-
-      {/* Drawer Content */}
-      <aside
-        className={`fixed top-0 left-0 z-50 w-64 h-screen bg-gradient-to-b from-[#1e3a8a] to-[#312e81] text-white p-6 shadow-lg transition-transform transform lg:relative lg:translate-x-0 lg:flex-shrink-0 ${
-          isDrawerOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex justify-between items-center mb-6">
-          <NavLink to="" className="flex items-center gap-2">
-            <img
-              src= {logo}
-              alt="SRJ Logo"
-              loading="lazy"
-              className="w-14 h-14 drop-shadow-md"
-            />
-            <h1 className="text-xl font-bold tracking-wide">
-              <span className="text-white">SRJ</span>
-              <span className="text-[#0A49D9]"> Global</span>
-              <span className="text-white"> Softech</span>
-            </h1>
-          </NavLink>
-          {/* Close button for mobile */}
-          <button className="lg:hidden" onClick={() => setIsDrawerOpen(false)}>
-            <X size={24} />
-          </button>
-        </div>
-        <SidebarContent />
-      </aside>
-
       {/* Main Content */}
-      <main className="flex-1 p-4 sm:p-6 lg:p-8">
-        {/* Top Bar */}
-        <div className="hidden lg:flex justify-between items-center mb-8">
-          <motion.h2
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-3xl font-bold text-blue-900"
-          >
-            {view === "addBlog"
-              ? "Add Blog"
-              : view === "yourBlogs"
-              ? "Your Blogs"
-              : "Admin Dashboard"}
-          </motion.h2>
-          <div className="flex items-center gap-2">
-            <FaUserShield className="text-gray-600" />
-            <span className="text-gray-800 font-medium">{username}</span>
-          </div>
-        </div>
+      <div className="flex-1 ml-64 flex flex-col h-full overflow-hidden">
+        {/* Topbar */}
+        <Topbar
+          view={view}
+          username={username}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />
 
-        {/* Views */}
-        {view === "dashboard" && (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-10">
+        {/* Scrollable Content */}
+        <main className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:px-10">
+          {view === "dashboard" && (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <DashboardCard
+                  icon={<FaBlog className="text-blue-600 text-3xl mb-2" />}
+                  title="Blogs"
+                  count={`${blogs.length} blogs added`}
+                  color="border-blue-600"
+                />
+                <DashboardCard
+                  icon={<MdOutlineContactPhone className="text-green-500 text-3xl mb-2" />}
+                  title="Service Contacts"
+                  count={`${contacts.length} contact requests`}
+                  color="border-green-500"
+                />
+                <DashboardCard
+                  icon={<FaServicestack className="text-purple-600 text-3xl mb-2" />}
+                  title="Services"
+                  count={`${servicesCount} services listed`}
+                  color="border-purple-600"
+                />
+              </div>
+
+              {/* Recent Contacts */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-4 sm:p-6 rounded-xl shadow-md border-t-4 border-blue-600"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="bg-white p-6 rounded-xl shadow-lg"
               >
-                <FaBlog className="text-blue-600 text-3xl mb-3" />
-                <h3 className="text-lg font-semibold text-gray-800">Blogs</h3>
-                <p className="text-gray-500">{blogs.length} blogs added</p>
+                <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                  Recent Contacts
+                </h3>
+                <ul className="divide-y divide-gray-200 text-sm">
+                  {contacts.slice(0, 5).map((contact) => (
+                    <li key={contact._id} className="py-3">
+                      <p className="font-semibold text-gray-800">
+                        {contact.firstName} {contact.lastName}
+                      </p>
+                      <p className="text-gray-600">{contact.email}</p>
+                      <p className="italic text-gray-700">
+                        "{contact.message || 'No message'}"
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
+            </>
+          )}
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-4 sm:p-6 rounded-xl shadow-md border-t-4 border-green-500"
-              >
-                <MdOutlineContactPhone className="text-green-500 text-3xl mb-3" />
-                <h3 className="text-lg font-semibold text-gray-800">Service Contacts</h3>
-                <p className="text-gray-500">{contacts.length} contact requests</p>
-              </motion.div>
+          {view === "addBlog" && <AddBlog />}
+          {view === "yourBlogs" && <YourBlogs />}
+          {view === "contacts" && <Contacts />}
+        </main>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-4 sm:p-6 rounded-xl shadow-md border-t-4 border-purple-600"
-              >
-                <FaServicestack className="text-purple-600 text-3xl mb-3" />
-                <h3 className="text-lg font-semibold text-gray-800">Services</h3>
-                <p className="text-gray-500">{servicesCount} services listed</p>
-              </motion.div>
-            </div>
-
-            {/* Recent Contacts */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white p-4 sm:p-6 rounded-xl shadow-md"
-            >
-              <h3 className="text-lg sm:text-xl font-bold mb-4 text-blue-900">Recent Contacts</h3>
-              <ul className="space-y-4 text-sm">
-                {contacts.slice(0, 5).map((contact) => (
-                  <li key={contact._id} className="border-b pb-3">
-                    <h4 className="font-semibold text-gray-800">
-                      {contact.firstName} {contact.lastName}
-                    </h4>
-                    <p className="text-gray-600">{contact.email}</p>
-                    <p className="text-gray-700 italic">
-                      "{contact.message || "No message"}"
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </>
-        )}
-
-        {view === "addBlog" && <AddBlog />}
-        {view === "yourBlogs" && <YourBlogs />}
-        {view === "contacts" && <Contacts />}
-
-        <footer className="mt-10 text-center text-gray-400 text-xs sm:text-sm">
+        {/* Footer */}
+        <footer className="text-center text-xs text-gray-400 py-4">
           &copy; {new Date().getFullYear()} SRJ Global Softtech. All rights reserved.
         </footer>
-      </main>
+      </div>
     </div>
   );
 };
+
+const DashboardCard = ({ icon, title, count, color }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className={`bg-white p-6 rounded-xl shadow-md border-t-4 ${color}`}
+  >
+    {icon}
+    <h4 className="text-lg font-semibold text-gray-800">{title}</h4>
+    <p className="text-gray-500">{count}</p>
+  </motion.div>
+);
 
 export default AdminDashboard;
