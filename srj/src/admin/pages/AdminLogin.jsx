@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Eye, EyeOff } from "lucide-react"; // use Heroicons or FontAwesome if preferred
+import { Eye, EyeOff } from "lucide-react";
 
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // <-- loading state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const AdminLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); // start loading
 
     try {
       const { data } = await axios.post(
@@ -31,6 +33,8 @@ const AdminLogin = () => {
       navigate("/admin/dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false); // stop loading
     }
   };
 
@@ -82,9 +86,14 @@ const AdminLogin = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 shadow-md"
+          disabled={loading}
+          className={`w-full text-white font-semibold py-2.5 rounded-lg transition-all duration-300 shadow-md ${
+            loading
+              ? "bg-blue-300 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`}
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>

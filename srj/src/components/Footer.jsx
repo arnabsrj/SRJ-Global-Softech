@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Logo and Brand */}
           <NavLink to="/" className="flex items-center sm:gap-3 group">
             <img
-              src= {logo}
+              src={logo}
               alt="SRJ Logo"
               className="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] drop-shadow-md transition-transform duration-300 group-hover:scale-105"
             />
@@ -37,8 +37,8 @@ const Footer = () => {
             </h1>
           </NavLink>
           <p className="text-sm text-gray-400 mt-2">
-            Innovative Digital Solutions like We build high-quality websites,
-            mobile apps & e-commerce platforms for growing brands.
+           Innovative digital solutions: we build high-quality websites, mobile
+            apps, and e-commerce platforms for growing brands.
           </p>
           <div className="flex gap-5 mt-8">
             <a
@@ -142,7 +142,7 @@ const Footer = () => {
               Phone:{" "}
               <span className="text-[#38BDF8]">
                 <br />
-                +91 92665 94199 <br />
+                +91 95407 77234 <br />
                 +91 92668 72499 <br />
                 +91 92205 78799
               </span>
@@ -150,9 +150,9 @@ const Footer = () => {
             <li>
               Address:
               <span className="block text-[#38BDF8] mt-1">
-                Urbtech Trade Centre, Tower 35, <br />
-                Adjacent to DPS School, Block B, <br />
-                Sector 132, Noida, Uttar Pradesh 201304
+                Urbtech Trade Center Tower, <br></br>
+                C -1101 Noida Sector-132,<br></br>
+                 Uttar Pradesh 201304
               </span>
             </li>
           </ul>

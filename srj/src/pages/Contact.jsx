@@ -193,15 +193,14 @@ const Contact = () => {
                       field === "email"
                         ? "email"
                         : field === "phone"
-                        ? "tel"
-                        : "text"
+                          ? "tel"
+                          : "text"
                     }
                     name={field}
-                    placeholder={`Enter your ${
-                      field === "phone"
+                    placeholder={`Enter your ${field === "phone"
                         ? "phone number (+91 9999999999)"
                         : field
-                    }`}
+                      }`}
                     value={formData[field]}
                     onChange={handleChange}
                     className="w-full px-4 py-2 rounded-lg border dark:border-gray-700 bg-gray-50 dark:bg-[#111] text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-[#0A49D9]"
@@ -291,7 +290,7 @@ const Contact = () => {
             <div>
               <h4 className="text-lg font-semibold mb-1">Phone</h4>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                +91 92665 94199 <br />
+                +91 95407 77234 <br />
                 +91 92668 72499 <br />
                 +91 92205 78799
               </p>
@@ -333,11 +332,9 @@ const Contact = () => {
             <div>
               <h4 className="text-lg font-semibold mb-1">Address</h4>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Urbtech Tower 35,
-                <br />
-                Adjacent DPS School, Sector 132,
-                <br />
-                Noida, Uttar Pradesh 201304
+                Urbtech Trade Center Tower,<br></br>
+                C -1101 Noida Sector-132,<br></br>
+                Uttar Pradesh 201304
               </p>
             </div>
           </div>

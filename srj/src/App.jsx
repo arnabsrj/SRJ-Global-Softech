@@ -28,6 +28,7 @@ import AddBlog from "./admin/components/AddBlog";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Layout for public pages
 function Layout({ children }) {
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop/>
       <Routes>
         {/* Public Website Pages */}
         <Route
