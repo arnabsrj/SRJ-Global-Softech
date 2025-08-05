@@ -30,7 +30,7 @@ const itemVariants = {
 const StatsSection = () => {
   return (
     <div className="relative z-20 -mt-28 md:-mt-25 z-[10] px-2 sm:px-0">
-      {/* Background Glow */}
+      
       <div className="absolute inset-0 blur-[120px] opacity-20 bg-gradient-to-r from-sky-300 via-blue-500 to-purple-400 rounded-3xl z-0"></div>
 
       <motion.div

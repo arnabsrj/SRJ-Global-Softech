@@ -84,7 +84,7 @@ const BlogPage = () => {
                     <img
                       src={thumbnail}
                       alt={blog.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300 "
                     />
                   </div>
                   <div className="p-5 flex flex-col justify-between h-full">
