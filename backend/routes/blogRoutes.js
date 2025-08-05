@@ -3,23 +3,9 @@ import multer from "multer";
 import Blog from "../models/Blog.js";
 import path from "path";
 import fs from "fs";
+import storage from "../config/cloudinaryStorage.js"; // ✅ ESM import
 
 const router = express.Router();
-
-// Multer storage config
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const uploadPath = "uploads/";
-    if (!fs.existsSync(uploadPath)) {
-      fs.mkdirSync(uploadPath);
-    }
-    cb(null, uploadPath);
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
-
 const upload = multer({ storage });
 
 /* ---------------------- POST: Add blog ---------------------- */
@@ -28,15 +14,10 @@ router.post("/", upload.array("images", 10), async (req, res) => {
     const { title, subtitle, description, author, hashtags } = req.body;
 
     const hashtagArray = hashtags
-      ? hashtags
-          .split(",")
-          .map((tag) => tag.trim())
-          .filter(Boolean)
+      ? hashtags.split(",").map((tag) => tag.trim()).filter(Boolean)
       : [];
 
-    const imageUrls = req.files.map((file) => {
-      return `${req.protocol}://${req.get("host")}/uploads/${file.filename}`;
-    });
+    const imageUrls = req.files.map((file) => file.path); // ✅ Cloudinary URLs
 
     const blog = new Blog({
       title,
@@ -81,14 +62,10 @@ router.put("/:id", async (req, res) => {
   try {
     const { title, subtitle, description, hashtags } = req.body;
 
-    // ✅ Support hashtags as array or comma-separated string
     const hashtagArray = Array.isArray(hashtags)
       ? hashtags
       : typeof hashtags === "string"
-      ? hashtags
-          .split(",")
-          .map((tag) => tag.trim())
-          .filter(Boolean)
+      ? hashtags.split(",").map((tag) => tag.trim()).filter(Boolean)
       : [];
 
     const updatedBlog = await Blog.findByIdAndUpdate(
@@ -113,7 +90,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-/* ---------------------- DELETE: Blog and its images ---------------------- */
+/* ---------------------- DELETE: Blog ---------------------- */
 router.delete("/:id", async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -121,16 +98,8 @@ router.delete("/:id", async (req, res) => {
       return res.status(404).json({ message: "Blog not found" });
     }
 
-    // Delete uploaded image files
-    if (blog.imageUrls && blog.imageUrls.length > 0) {
-      blog.imageUrls.forEach((url) => {
-        const filename = url.split("/uploads/")[1];
-        const filePath = path.join("uploads", filename);
-        if (fs.existsSync(filePath)) {
-          fs.unlinkSync(filePath);
-        }
-      });
-    }
+    // NOTE: Cloudinary deletion requires public_id, which should be stored in DB if needed
+    // Right now, skipping Cloudinary image deletion
 
     await blog.deleteOne();
     res.json({ message: "Blog deleted successfully" });
