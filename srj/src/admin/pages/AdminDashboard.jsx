@@ -20,8 +20,12 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const blogRes = await axios.get(`${import.meta.env.VITE_BASE_URL}/blogs`);
-        const contactRes = await axios.get(`${import.meta.env.VITE_BASE_URL}/contacts`);
+        const blogRes = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/blogs`
+        );
+        const contactRes = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/contacts`
+        );
         setBlogs(blogRes.data);
         setContacts(contactRes.data);
       } catch (error) {
@@ -37,90 +41,106 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden font-sans bg-gradient-to-tr from-white via-[#eef2ff] to-[#f0f4ff]">
-      {/* Sidebar - Fixed */}
-      <div className="w-64 fixed inset-y-0 z-20">
-        <Sidebar
-          view={view}
-          setView={setView}
-          handleAdminLogout={handleAdminLogout}
-          isDrawerOpen={isDrawerOpen}
-          setIsDrawerOpen={setIsDrawerOpen}
-        />
-      </div>
+   <div className="flex h-screen font-sans bg-gradient-to-tr from-white via-[#eef2ff] to-[#f0f4ff]">
 
-      {/* Main Content */}
-      <div className="flex-1 ml-64 flex flex-col h-full overflow-hidden">
-        {/* Topbar */}
-        <Topbar
-          view={view}
-          username={username}
-          setIsDrawerOpen={setIsDrawerOpen}
-        />
+  {/* Sidebar - Desktop & Mobile */}
+  <div
+    className={`fixed z-30 inset-y-0 left-0 w-64 transform bg-white border-r shadow-md transition-transform duration-300 ease-in-out
+      ${isDrawerOpen ? "translate-x-0" : "-translate-x-full"}
+      lg:translate-x-0 lg:static lg:inset-0`}
+  >
+    <Sidebar
+      view={view}
+      setView={setView}
+      handleAdminLogout={handleAdminLogout}
+      isDrawerOpen={isDrawerOpen}
+      setIsDrawerOpen={setIsDrawerOpen}
+    />
+  </div>
 
-        {/* Scrollable Content */}
-        <main className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:px-10">
-          {view === "dashboard" && (
-            <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                <DashboardCard
-                  icon={<FaBlog className="text-blue-600 text-3xl mb-2" />}
-                  title="Blogs"
-                  count={`${blogs.length} blogs added`}
-                  color="border-blue-600"
-                />
-                <DashboardCard
-                  icon={<MdOutlineContactPhone className="text-green-500 text-3xl mb-2" />}
-                  title="Service Contacts"
-                  count={`${contacts.length} contact requests`}
-                  color="border-green-500"
-                />
-                <DashboardCard
-                  icon={<FaServicestack className="text-purple-600 text-3xl mb-2" />}
-                  title="Services"
-                  count={`${servicesCount} services listed`}
-                  color="border-purple-600"
-                />
-              </div>
+  {/* Overlay on Mobile */}
+  {isDrawerOpen && (
+    <div
+      className="fixed inset-0 z-20 bg-[#00000045] bg-opacity-40 lg:hidden"
+      onClick={() => setIsDrawerOpen(false)}
+    ></div>
+  )}
 
-              {/* Recent Contacts */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white p-6 rounded-xl shadow-lg"
-              >
-                <h3 className="text-xl font-semibold text-blue-900 mb-4">
-                  Recent Contacts
-                </h3>
-                <ul className="divide-y divide-gray-200 text-sm">
-                  {contacts.slice(0, 5).map((contact) => (
-                    <li key={contact._id} className="py-3">
-                      <p className="font-semibold text-gray-800">
-                        {contact.firstName} {contact.lastName}
-                      </p>
-                      <p className="text-gray-600">{contact.email}</p>
-                      <p className="italic text-gray-700">
-                        "{contact.message || 'No message'}"
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </>
-          )}
+  {/* Main Content */}
+  <div className="flex flex-col flex-1 h-full overflow-hidden lg:ml-0 transition-all duration-300 ease-in-out">
 
-          {view === "addBlog" && <AddBlog />}
-          {view === "yourBlogs" && <YourBlogs />}
-          {view === "contacts" && <Contacts />}
-        </main>
+    {/* Topbar */}
+    <Topbar
+      view={view}
+      username={username}
+      setIsDrawerOpen={setIsDrawerOpen}
+    />
 
-        {/* Footer */}
-        <footer className="text-center text-xs text-gray-400 py-4">
-          &copy; {new Date().getFullYear()} SRJ Global Softtech. All rights reserved.
-        </footer>
-      </div>
-    </div>
+    {/* Main Area */}
+    <main className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:px-10">
+      {view === "dashboard" && (
+        <>
+          {/* Dashboard Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <DashboardCard
+              icon={<FaBlog className="text-blue-600 text-3xl mb-2" />}
+              title="Blogs"
+              count={`${blogs.length} blogs added`}
+              color="border-blue-600"
+            />
+            <DashboardCard
+              icon={<MdOutlineContactPhone className="text-green-500 text-3xl mb-2" />}
+              title="Service Contacts"
+              count={`${contacts.length} contact requests`}
+              color="border-green-500"
+            />
+            <DashboardCard
+              icon={<FaServicestack className="text-purple-600 text-3xl mb-2" />}
+              title="Services"
+              count={`${servicesCount} services listed`}
+              color="border-purple-600"
+            />
+          </div>
+
+          {/* Recent Contacts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="bg-white p-4 sm:p-6 rounded-xl shadow-lg"
+          >
+            <h3 className="text-lg sm:text-xl font-semibold text-blue-900 mb-4">
+              Recent Contacts
+            </h3>
+            <ul className="divide-y divide-gray-200 text-sm">
+              {contacts.slice(0, 5).map((contact) => (
+                <li key={contact._id} className="py-3">
+                  <p className="font-semibold text-gray-800">
+                    {contact.firstName} {contact.lastName}
+                  </p>
+                  <p className="text-gray-600">{contact.email}</p>
+                  <p className="italic text-gray-700">
+                    "{contact.message || "No message"}"
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </>
+      )}
+
+      {view === "addBlog" && <AddBlog />}
+      {view === "yourBlogs" && <YourBlogs />}
+      {view === "contacts" && <Contacts />}
+    </main>
+
+    {/* Footer */}
+    <footer className="text-center text-xs text-gray-400 py-4">
+      &copy; {new Date().getFullYear()} SRJ Global Softtech. All rights reserved.
+    </footer>
+  </div>
+</div>
+
   );
 };
 

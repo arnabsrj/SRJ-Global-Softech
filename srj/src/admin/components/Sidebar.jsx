@@ -2,7 +2,6 @@
 import React from "react";
 import { FaBlog, FaUsers, FaServicestack, FaUserShield } from "react-icons/fa";
 import { LogOut } from "lucide-react";
-import { NavLink } from "react-router-dom";
 import logo from "../../assets/srjglobal.png";
 
 const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOpen }) => {
@@ -11,7 +10,6 @@ const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOp
     { label: "Add Blogs", icon: <FaBlog />, key: "addBlog" },
     { label: "Your Blogs", icon: <FaUsers />, key: "yourBlogs" },
     { label: "Service Contacts", icon: <FaServicestack />, key: "contacts" },
-    { label: "Logout", icon: <LogOut />, key: "logout" },
   ];
 
   return (
@@ -19,17 +17,19 @@ const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOp
       {/* Backdrop */}
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40"
+          className="fixed inset-0 bg-white/10 backdrop-blur-sm z-40"
           onClick={() => setIsDrawerOpen(false)}
         ></div>
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 w-64 h-screen bg-gradient-to-b from-[#1e3a8a] to-[#312e81] text-white shadow-lg transition-transform transform lg:relative lg:translate-x-0 lg:flex-shrink-0 ${
+        className={`fixed top-0 left-0 z-50 w-64 h-screen bg-gradient-to-b from-[#1e3a8a] to-[#312e81] text-white shadow-lg transition-transform transform flex flex-col
+        lg:relative lg:translate-x-0 lg:flex-shrink-0 ${
           isDrawerOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
+        {/* Header */}
         <div className="flex justify-between items-center mb-6 p-2 bg-[#28307a]">
           <div className="flex items-center gap-2">
             <img
@@ -44,24 +44,21 @@ const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOp
               <span className="text-white"> Softech</span>
             </h1>
           </div>
-          <button className="lg:hidden" onClick={() => setIsDrawerOpen(false)}>
+          <button className="lg:hidden text-white" onClick={() => setIsDrawerOpen(false)}>
             ✖
           </button>
         </div>
 
-        <nav className="space-y-2 text-sm sm:text-base font-medium">
+        {/* Nav Items */}
+        <nav className="space-y-2 text-sm sm:text-base font-medium px-2 flex-1">
           {menuItems.map((item) => (
             <div
               key={item.key}
               onClick={() => {
-                if (item.key === "logout") {
-                  handleAdminLogout();
-                } else {
-                  setView(item.key);
-                  setIsDrawerOpen(false);
-                }
+                setView(item.key);
+                setIsDrawerOpen(false);
               }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all duration-200
+              className={`flex items-center gap-3 px-2 py-3 rounded-lg cursor-pointer transition-all duration-200
               ${
                 view === item.key
                   ? "bg-white/10 text-cyan-300 font-semibold"
@@ -73,6 +70,17 @@ const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOp
             </div>
           ))}
         </nav>
+
+        {/* Logout at Bottom */}
+        <div className="px-2 border-t border-white/10 ">
+          <div
+            onClick={handleAdminLogout}
+            className="flex items-center gap-3 px-2 py-3 rounded-lg cursor-pointer transition-all duration-200 text-white"
+          >
+            <LogOut size={20} className="text-red-400" />
+            <span className="text-red-400">Logout</span>
+          </div>
+        </div>
       </aside>
     </>
   );

@@ -142,7 +142,7 @@ const Footer = () => {
               Phone:{" "}
               <span className="text-[#38BDF8]">
                 <br />
-                +91 95407 77234 <br />
+                +91 92665 94199 <br />
                 +91 92668 72499 <br />
                 +91 92205 78799
               </span>

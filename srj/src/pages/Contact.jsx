@@ -290,7 +290,7 @@ const Contact = () => {
             <div>
               <h4 className="text-lg font-semibold mb-1">Phone</h4>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                +91 95407 77234 <br />
+                +91 92665 94199 <br />
                 +91 92668 72499 <br />
                 +91 92205 78799
               </p>
