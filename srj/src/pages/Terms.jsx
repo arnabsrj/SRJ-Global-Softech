@@ -12,7 +12,7 @@ const Terms = () => {
       initial="hidden"
       animate="show"
       variants={fadeUp}
-      className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-[50px]"
     >
       <div className="max-w-4xl mx-auto mt-10">
         <h1 className="text-4xl font-extrabold text-center bg-gradient-to-r from-sky-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent mb-10 tracking-tight">

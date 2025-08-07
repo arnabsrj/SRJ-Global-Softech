@@ -94,12 +94,12 @@ const AdminDashboard = () => {
               count={`${contacts.length} contact requests`}
               color="border-green-500"
             />
-            <DashboardCard
+            {/* <DashboardCard
               icon={<FaServicestack className="text-purple-600 text-3xl mb-2" />}
               title="Services"
               count={`${servicesCount} services listed`}
               color="border-purple-600"
-            />
+            /> */}
           </div>
 
           {/* Recent Contacts */}

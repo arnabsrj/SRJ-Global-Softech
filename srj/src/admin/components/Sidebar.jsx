@@ -2,7 +2,7 @@
 import React from "react";
 import { FaBlog, FaUsers, FaServicestack, FaUserShield } from "react-icons/fa";
 import { LogOut } from "lucide-react";
-import logo from "../../assets/srjglobal.png";
+import logo from "../../assets/footer-logo.png";
 
 const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOpen }) => {
   const menuItems = [
@@ -36,12 +36,12 @@ const Sidebar = ({ view, setView, handleAdminLogout, isDrawerOpen, setIsDrawerOp
               src={logo}
               alt="SRJ Logo"
               loading="lazy"
-              className="w-14 h-14 drop-shadow-md"
+              className="w-20 h-20 drop-shadow-md"
             />
             <h1 className="text-xl font-bold tracking-wide text-[16px]">
-              <span className="text-white">SRJ</span>
-              <span className="text-[#0A49D9]"> Global</span>
-              <span className="text-white"> Softech</span>
+              <span className="text-white">SRJ </span>
+              <span className="text-[#ed8105]">GLOBAL</span><br></br>
+              <span className="text-white">TECHNOLOGIES</span>
             </h1>
           </div>
           <button className="lg:hidden text-white" onClick={() => setIsDrawerOpen(false)}>

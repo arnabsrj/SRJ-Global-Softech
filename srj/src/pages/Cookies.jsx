@@ -7,7 +7,7 @@ const Cookies = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-white to-purple-100"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-white to-purple-100 mt-[50px]"
     >
       {/* Decorative Blobs */}
       <div className="absolute top-0 left-0 w-60 h-60 bg-sky-300 opacity-30 rounded-full blur-3xl -z-10 animate-pulse" />

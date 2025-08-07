@@ -9,7 +9,7 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section
-        className="relative h-screen sm:min-h-[90vh] bg-cover bg-center bg-no-repeat text-white pt-32 mt-16 px-4 text-center overflow-hidden transition-colors duration-500"
+        className="relative h-screen sm:min-h-[90vh] bg-cover bg-center bg-no-repeat text-white pt-32 mt-[100px] px-4 text-center overflow-hidden transition-colors duration-500"
         style={{
           backgroundImage: "url('/hoimg.jpg')",
         }}

@@ -107,7 +107,7 @@ const Privacy = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8"
+      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 mt-[50px]"
     >
       {/* Background Blobs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-sky-300 opacity-30 rounded-full filter blur-3xl -z-10 animate-pulse"></div>

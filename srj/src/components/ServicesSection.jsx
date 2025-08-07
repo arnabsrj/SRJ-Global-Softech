@@ -141,16 +141,14 @@ const ServicesSection = () => {
 
   return (
     <section
-      className="relative py-20 px-6 md:px-10 bg-white dark:bg-gray-950 text-black dark:text-white transition-colors duration-500 overflow-x-hidden border-t border-gray-200 dark:border-gray-800"
+      className="relative mt-[70px] py-20 px-6 md:px-10 bg-white dark:bg-gray-950 text-black dark:text-white transition-colors duration-500 overflow-x-hidden border-t border-gray-200 dark:border-gray-800"
       id="services"
     >
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="relative w-64 h-64 flex items-center justify-center rounded-full bg-gradient-to-br from-[#0A49D9] to-[#38BDF8] text-white text-xl font-semibold text-center p-6 animate-glowPulse shadow-lg">
-          <span className="z-10 animate-float">
-            OUR
-            <br />
-            SERVICES
+          <span className="z-10 animate-float text-[40px] font-extrabold">
+            OUR SERVICES
           </span>
           <div className="absolute inset-0 rounded-full bg-white dark:bg-gray-950 opacity-10 blur-2xl animate-glowPulse" />
         </div>
@@ -203,17 +201,16 @@ const ServicesSection = () => {
         onMouseLeave={startAutoScroll}
       >
         {/* Gradient overlays */}
-        
 
         {/* Services */}
         <div
           ref={scrollContainerRef}
-          className="scroll-smooth overflow-x-auto scrollbar-hide flex w-full space-x-8 px-4 pb-10 snap-x snap-mandatory"
+          className="scroll-smooth overflow-x-auto hide-scrollbar flex w-full space-x-8 px-4 pb-10 snap-x snap-mandatory"
         >
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="flex-none snap-start w-[90vw] max-w-sm sm:max-w-md md:max-w-lg bg-white/40 dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 group transform-gpu"
+              className="flex-none snap-start w-[90vw] max-w-sm sm:max-w-md md:max-w-lg bg-white/40 dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1] transition-transform duration-300 group transform-gpu"
               data-aos="zoom-in-up"
               data-aos-delay={idx * 100}
             >

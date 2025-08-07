@@ -32,7 +32,7 @@ const Industry = () => {
       </h2>
 
       {/* Marquee Container */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden py-2">
         <div className="flex animate-marquee gap-10 w-max">
           {loopedLogos.map((company, index) => (
             <div

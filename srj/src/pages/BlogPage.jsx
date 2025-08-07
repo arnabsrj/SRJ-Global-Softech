@@ -39,7 +39,7 @@ const BlogPage = () => {
     }).format(new Date(dateStr));
 
   return (
-    <div className="bg-[#dbe9f5] dark:bg-gray-900 min-h-screen">
+    <div className="bg-[#dbe9f5] dark:bg-gray-900 min-h-screen mt-[100px]">
       {/* Hero Section */}
       <div className="relative mt-15 h-80 sm:h-96 w-full overflow-hidden mb-16">
         <img

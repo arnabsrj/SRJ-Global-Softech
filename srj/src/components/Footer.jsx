@@ -14,7 +14,7 @@ import { MdOutlineSmartToy } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import AdPopup from "../components/AdPopup";
 import Chatbot from "./Chatbot";
-import logo from "../assets/srjglobal.png";
+import logo from "../assets/footer-logo.png";
 
 const Footer = () => {
   const [chatbotOpen, setChatbotOpen] = useState(false);
@@ -32,8 +32,8 @@ const Footer = () => {
             />
             <h1 className="text-2xl font-bold tracking-wide drop-shadow-sm">
               <span className="text-white">SRJ</span>
-              <span className="text-[#0A49D9]"> Global</span>
-              <span className="text-white"> Softech</span>
+              <span className="text-[#0A49D9]"> GLOBAL</span>
+              <span className="text-white"> TECHNOLOGIES</span>
             </h1>
           </NavLink>
           <p className="text-sm text-gray-400 mt-2">

@@ -611,7 +611,7 @@ const Services = () => {
   const [viewMode, setViewMode] = useState("brief");
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-[#0d0d0d] dark:via-[#111] dark:to-[#1a1a1a] text-black dark:text-white pt-32 px-4 overflow-hidden">
+    <section className="relative mt-[100px] min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-[#0d0d0d] dark:via-[#111] dark:to-[#1a1a1a] text-black dark:text-white pt-32 px-4 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-[-200px] left-[-100px] w-[500px] h-[500px] bg-sky-400/30 rounded-full blur-[150px] animate-pulse-slow z-0" />
       <div className="absolute bottom-[-150px] right-[-100px] w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-[130px] animate-pulse-slow z-0" />

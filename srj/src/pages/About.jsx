@@ -13,7 +13,7 @@ const stats = [
 
 const About = () => {
   return (
-    <div className="relative min-h-screen bg-white dark:bg-[#0e0e0e] text-black dark:text-white pt-28 px-4 overflow-hidden transition-colors duration-500">
+    <div className="relative mt-[100px] min-h-screen bg-white dark:bg-[#0e0e0e] text-black dark:text-white pt-28 px-4 overflow-hidden transition-colors duration-500">
       {/* Glowing Background Blobs */}
       <div className="absolute inset-0 z-0">
         <div className="w-[500px] h-[500px] bg-green-400 dark:bg-green-700 blur-[160px] opacity-25 absolute top-[-150px] left-[-150px] animate-pulse rounded-full"></div>

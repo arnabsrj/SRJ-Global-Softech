@@ -130,7 +130,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0e0e0e] pt-28 px-6 sm:px-10 text-black dark:text-white transition-colors duration-500">
+    <div className="min-h-screen mt-[100px] pb-1 bg-white dark:bg-[#0e0e0e] pt-28 px-6 sm:px-10 text-black dark:text-white transition-colors duration-500">
       {/* Header Section */}
       <div className="max-w-5xl mx-auto text-center mb-16">
         <motion.div

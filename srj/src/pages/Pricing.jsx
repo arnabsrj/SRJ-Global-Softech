@@ -335,7 +335,7 @@ export default function PricingChart() {
   return (
     <>
       {/* Search Input */}
-      <div className="flex justify-center items-center gap-2 mb-10 mt-28">
+      <div className="flex justify-center items-center gap-2 mb-10 mt-38">
         <input
           type="text"
           placeholder="🔍 Search service, tier or feature..."
