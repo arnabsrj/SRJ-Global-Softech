@@ -497,7 +497,7 @@ const ServicesSection = () => {
                   {truncateText(service.desc, 10)}
                 </p>
                 <Link
-                  to={`/service/${service.id}`}
+                  to={`/services`}
                   className="mt-3 inline-block text-blue-600 dark:text-blue-400 hover:underline"
                 >
                   Read More
