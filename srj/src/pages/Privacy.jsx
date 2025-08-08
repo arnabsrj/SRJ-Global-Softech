@@ -14,7 +14,7 @@ const sections = [
   {
     title: "1. Introduction",
     icon: <FaInfoCircle className="text-sky-600 mr-2" />,
-    content: `At SRJ Global Softech (“we”, “our”, or “us”), we respect your privacy and are committed to protecting it through this Privacy Policy. This document describes how we collect, use, process, and share your personal data through our website (hereinafter referred to as the "Platform").
+    content: `At SRJ Global Technologies (“we”, “our”, or “us”), we respect your privacy and are committed to protecting it through this Privacy Policy. This document describes how we collect, use, process, and share your personal data through our website (hereinafter referred to as the "Platform").
     By accessing or using our Platform, you agree to be bound by the terms of this Privacy Policy and our Terms of Use. If you do not agree with any part of this policy, please do not access or use our services.`,
   },
   {

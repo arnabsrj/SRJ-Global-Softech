@@ -197,6 +197,28 @@ const pricingData = {
       features: ["Retargeting", "Performance boost"],
     },
   ],
+  Gaming: [
+    {
+      tier: "Basic",
+      price: 14999,
+      features: ["Simple 2D game (1–2 levels)", "Basic UI & graphics", "Mobile-friendly", "Basic sound effects"],
+    },
+    {
+      tier: "Standard",
+      price: 24999,
+      features: ["2D game (3–5 levels)", "Custom graphics & animations", "Scoreboard & basic achievements", "Android & iOS build"],
+    },
+    {
+      tier: "Advanced",
+      price: 39999,
+      features: ["2D/Basic 3D game (up to 10 levels)", "Story mode integration", "Multiplayer (local) support", "Custom music & sound design", "Play Store & App Store publishing"],
+    },
+    {
+      tier: "Premium",
+      price: 69999,
+      features: ["Fully custom 3D game", "Multiplayer (online) with chat", "In-app purchases & ads integration", "Analytics & user tracking", "Ongoing support & updates"],
+    },
+  ]
 };
 
 const addOns = [

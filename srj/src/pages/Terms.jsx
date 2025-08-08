@@ -29,12 +29,12 @@ const Terms = () => {
               {
                 title: "1. Acceptance of Terms",
                 content:
-                  "By accessing and using the services provided by SRJ Global Softech (\"we,\" \"our,\" or \"us\"), you agree to comply with and be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.",
+                  "By accessing and using the services provided by SRJ Global Technologies (\"we,\" \"our,\" or \"us\"), you agree to comply with and be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.",
               },
               {
                 title: "2. Services Description",
                 content:
-                  "SRJ Global Softech provides various digital services including but not limited to website design and development, mobile app development, e-commerce solutions, digital marketing, and other related services as described on our website.",
+                  "SRJ Global Technologies provides various digital services including but not limited to website design and development, mobile app development, e-commerce solutions, digital marketing, and other related services as described on our website.",
               },
               {
                 title: "3. User Accounts and Responsibilities",
@@ -49,17 +49,17 @@ const Terms = () => {
               {
                 title: "5. Intellectual Property Rights",
                 content:
-                  "All content included on our website, such as text, graphics, logos, images, and software, is the property of SRJ Global Softech or its content suppliers and is protected by international copyright laws. The compilation of all content on this site is the exclusive property of SRJ Global Softech.",
+                  "All content included on our website, such as text, graphics, logos, images, and software, is the property of SRJ Global Technologies or its content suppliers and is protected by international copyright laws. The compilation of all content on this site is the exclusive property of SRJ Global Technologies.",
               },
               {
                 title: "6. Limitation of Liability",
                 content:
-                  "SRJ Global Softech shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of, or inability to access or use, our services or any content provided by SRJ Global Softech.",
+                  "SRJ Global Technologies shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of, or inability to access or use, our services or any content provided by SRJ Global Technologies.",
               },
               {
                 title: "7. Indemnification",
                 content:
-                  "You agree to indemnify, defend, and hold harmless SRJ Global Softech, its officers, directors, employees, agents, and third parties, for any losses, costs, liabilities, and expenses relating to or arising out of your use of our services or your violation of these Terms and Conditions.",
+                  "You agree to indemnify, defend, and hold harmless SRJ Global Technologies, its officers, directors, employees, agents, and third parties, for any losses, costs, liabilities, and expenses relating to or arising out of your use of our services or your violation of these Terms and Conditions.",
               },
               {
                 title: "8. Governing Law",

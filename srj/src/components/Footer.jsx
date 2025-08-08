@@ -200,7 +200,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} SRJ Global Softech. All rights reserved.
+        © {new Date().getFullYear()} SRJ Global Technologies. All rights reserved.
       </div>
 
       {/* Floating Chatbot & Chat Icons */}

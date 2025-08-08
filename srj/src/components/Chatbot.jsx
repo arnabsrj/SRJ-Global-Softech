@@ -60,7 +60,7 @@ const Chatbot = ({ open, onClose }) => {
           ...msgs,
           {
             from: "ai",
-            text: "Hello, welcome to SRJ Global Softech team! I am here to assist you.",
+            text: "Hello, welcome to SRJ Global Technologies team! I am here to assist you.",
           },
         ]);
       }, 600);
@@ -71,14 +71,14 @@ const Chatbot = ({ open, onClose }) => {
     if (
       lower.includes("what is srj") ||
       lower.includes("about srj") ||
-      lower.includes("srj global softech")
+      lower.includes("SRJ Global Technologies")
     ) {
       setTimeout(() => {
         setMessages((msgs) => [
           ...msgs,
           {
             from: "ai",
-            text: "SRJ Global Softech is a leading digital solutions provider offering web development, app development, SEO, branding, and more.",
+            text: "SRJ Global Technologies is a leading digital solutions provider offering web development, app development, SEO, branding, and more.",
           },
         ]);
       }, 600);
@@ -185,7 +185,8 @@ const Chatbot = ({ open, onClose }) => {
         right: "1.5rem",
         width: "310px",
         maxWidth: "92vw",
-        height: "400px",
+        height: "370px",
+        overflow: "hidden",
         maxHeight: "75vh",
         background: "#fff",
         borderRadius: "2rem",

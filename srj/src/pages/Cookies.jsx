@@ -39,7 +39,7 @@ const Cookies = () => {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               2. How We Use Cookies
             </h2>
-            <p>SRJ Global Softech uses cookies for:</p>
+            <p>SRJ Global Technologies uses cookies for:</p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>
                 <strong>Essential Cookies:</strong> Required for core website
