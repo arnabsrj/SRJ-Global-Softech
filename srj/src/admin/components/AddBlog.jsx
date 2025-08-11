@@ -4,7 +4,7 @@ import "react-quill/dist/quill.snow.css";
 import { Plus } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Image } from 'lucide-react';
+import { Image } from "lucide-react";
 
 // Utility to generate slug
 const slugify = (text) =>
@@ -25,6 +25,31 @@ const AddBlog = () => {
   const [images, setImages] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef(null);
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }], // header dropdown with H1, H2, H3, Normal text
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["blockquote", "code-block"],
+      ["link", "image"],
+      ["clean"],
+    ],
+  };
+
+  const formats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "list",
+    "bullet",
+    "blockquote",
+    "code-block",
+    "link",
+    "image",
+  ];
 
   // Auto-generate slug from title
   useEffect(() => {
@@ -86,7 +111,10 @@ const AddBlog = () => {
         <Section title=" Upload Images">
           <div className="flex flex-wrap gap-4">
             {images.map((img, idx) => (
-              <div key={idx} className="w-24 h-24 rounded overflow-hidden border relative">
+              <div
+                key={idx}
+                className="w-24 h-24 rounded overflow-hidden border relative"
+              >
                 <img
                   src={URL.createObjectURL(img)}
                   alt="preview"
@@ -158,6 +186,8 @@ const AddBlog = () => {
             theme="snow"
             value={description}
             onChange={setDescription}
+            modules={modules}
+            formats={formats}
             className="bg-white"
           />
         </Section>
@@ -168,7 +198,9 @@ const AddBlog = () => {
             type="submit"
             disabled={isSubmitting}
             className={`bg-blue-600 text-white px-6 py-3 rounded-lg font-medium text-lg transition ${
-              isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+              isSubmitting
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-blue-700"
             }`}
           >
             {isSubmitting ? "Submitting..." : "Publish Blog"}
@@ -189,7 +221,15 @@ const Section = ({ title, children }) => (
   </div>
 );
 
-const InputField = ({ label, value, onChange, required = false, placeholder, note, readOnly = false }) => (
+const InputField = ({
+  label,
+  value,
+  onChange,
+  required = false,
+  placeholder,
+  note,
+  readOnly = false,
+}) => (
   <div className="mb-4">
     <label className="block font-medium mb-1 text-gray-700">{label}</label>
     <input
