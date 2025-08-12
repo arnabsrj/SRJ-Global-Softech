@@ -61,6 +61,14 @@ function App() {
           }
         />
         <Route
+         path="/services/:id"
+        element={
+            <Layout>
+              <Services />
+            </Layout>
+          }
+           />
+        <Route
           path="/services"
           element={
             <Layout>

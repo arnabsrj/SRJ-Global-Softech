@@ -115,7 +115,7 @@ const BlogDetails = () => {
 
       {/* Blog Content */}
       <div
-        className="prose lg:prose-xl max-w-none dark:prose-invert"
+        className="prose prose-override max-w-none dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: safeHTML }}
       />
 
