@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "srj-global-softech",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
