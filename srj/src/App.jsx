@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Home from "./pages/Home";
@@ -19,16 +20,15 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/BlogPage";
 import BlogDetails from "./components/BlogDetails";
 import PricingChart from "./pages/Pricing";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Cookies from "./pages/Cookies";
 
 // Admin Pages
 import AdminLogin from "./admin/pages/AdminLogin";
 import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminProtectedRoute from "./admin/routes/AdminProtectedRoute";
 import AddBlog from "./admin/components/AddBlog";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import Cookies from "./pages/Cookies";
-import ScrollToTop from "./components/ScrollToTop";
 
 // Layout for public pages
 function Layout({ children }) {
@@ -49,7 +49,9 @@ function App() {
 
   return (
     <>
-    <ScrollToTop/>
+      {/* ScrollToTop must be inside Router context */}
+      <ScrollToTop />
+
       <Routes>
         {/* Public Website Pages */}
         <Route
@@ -61,13 +63,13 @@ function App() {
           }
         />
         <Route
-         path="/services/:id"
-        element={
+          path="/services/:id"
+          element={
             <Layout>
               <Services />
             </Layout>
           }
-           />
+        />
         <Route
           path="/services"
           element={
