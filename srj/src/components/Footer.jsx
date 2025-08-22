@@ -135,16 +135,16 @@ const Footer = () => {
                 href="mailto:srjsoftechsolutions@gmail.com"
                 className="text-[#38BDF8]"
               >
-                srjglobalsoftech@gmail.com
+                srjglobaltechnology@gmail.com
               </a>
             </li>
             <li>
               Phone:{" "}
               <span className="text-[#38BDF8]">
                 <br />
-                +91 92665 94199 <br />
-                +91 92668 72499 <br />
-                +91 92205 78799
+                +91 92667 06599 <br />
+                +91 96251 90448 <br />
+                +91 92665 94199
               </span>
             </li>
             <li>
