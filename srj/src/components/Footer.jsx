@@ -132,7 +132,7 @@ const Footer = () => {
             <li>
               Email:{" "}
               <a
-                href="mailto:srjsoftechsolutions@gmail.com"
+                href="mailto:srjglobaltechnology@gmail.com"
                 className="text-[#38BDF8]"
               >
                 srjglobaltechnology@gmail.com
@@ -233,7 +233,7 @@ const Footer = () => {
       {/* Chatbot Modal */}
       <Chatbot open={chatbotOpen} onClose={() => setChatbotOpen(false)} />
 
-      <AdPopup />
+      {/* <AdPopup /> */}
     </footer>
   );
 };
