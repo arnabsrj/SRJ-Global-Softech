@@ -77,7 +77,7 @@ const ChooseUs = () => {
             viewport={{ once: true }}
           >
             Why Choose <br />
-            SRJ Globel Softech
+            SRJ Global Technologies
           </motion.div>
 
           {/* Right Features */}

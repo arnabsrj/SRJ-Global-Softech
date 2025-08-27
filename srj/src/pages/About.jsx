@@ -40,8 +40,9 @@ const About = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          At SRJ Softech Solutions, we deliver digital solutions — from websites
-          and apps to branding and SEO — helping you grow in the modern world.
+          At SRJ Global Technologies, we deliver digital solutions — from
+          websites and apps to branding and SEO — helping you grow in the modern
+          world.
         </motion.p>
 
         <motion.div
@@ -99,7 +100,7 @@ const About = () => {
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
             Our site developers give master web application advancement and
             website architecture administrations to our clients. SRJ Global
-            Softech offers an assortment of web composition and improvement
+            Technologies offers an assortment of web composition and improvement
             administrations, from making portable web advancement arrangements
             and responsive web architectures, to building custom web based
             business and intranet encounters utilizing the most recent and
@@ -124,7 +125,7 @@ const About = () => {
         >
           <img
             src={aboutImg}
-            alt="About SRJ Softech"
+            alt="About SRJ Global Technologies"
             className="w-full max-w-md md:max-w-full mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
