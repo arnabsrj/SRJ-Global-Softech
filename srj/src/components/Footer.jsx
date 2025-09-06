@@ -87,7 +87,7 @@ const Footer = () => {
               <FaXTwitter className="sm:text-2xl text-lg" />
             </a>
             <a
-              href="https://www.linkedin.com/company/srj-global-softech/?viewAsMember=true"
+              href="https://www.linkedin.com/in/srj-global-technologies-b4626a382/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 text-[#0A49D9] hover:text-white hover:bg-[#0A49D9] transition"
@@ -142,9 +142,8 @@ const Footer = () => {
               Phone:{" "}
               <span className="text-[#38BDF8]">
                 <br />
-                +91 92667 06599 <br />
                 +91 96251 90448 <br />
-                +91 92665 94199
+                +91 92667 06599
               </span>
             </li>
             <li>

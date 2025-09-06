@@ -14,21 +14,25 @@ const pricingData = {
     {
       tier: "Basic",
       price: 14999,
+      displayPrice: "14,999+",
       features: ["4–5 pages", "Contact form", "Responsive", "Basic SEO"],
     },
     {
       tier: "Standard",
       price: 24999,
+      displayPrice: "24,999+",
       features: ["7–10 pages", "WhatsApp + Map", "Dynamic sections"],
     },
     {
       tier: "Advanced",
       price: 39999,
+      displayPrice: "39,999+",
       features: ["UI/UX", "Animations", "Blog", "Chatbot", "Domain + Hosting"],
     },
     {
       tier: "Premium",
       price: 69999,
+      displayPrice: "69,999+",
       features: ["E-commerce/Booking", "Admin Panel", "Analytics"],
     },
   ],
@@ -51,6 +55,7 @@ const pricingData = {
     {
       tier: "Premium",
       price: 99999,
+      displayPrice: "99,999+",
       features: ["E-com app", "Admin panel", "Payments"],
     },
   ],
@@ -91,6 +96,7 @@ const pricingData = {
     {
       tier: "Premium",
       price: 129999,
+      displayPrice: "1,49,999+",
       features: ["Cloud-based", "Multi-login", "Real-time sync"],
     },
   ],
@@ -111,12 +117,12 @@ const pricingData = {
   Graphics: [
     {
       tier: "Logo (Basic)",
-      price: 1499,
+      price: 3499,
       features: ["2–3 concepts", "1 revision"],
     },
     {
       tier: "Logo (Pro)",
-      price: 2999,
+      price: 4999,
       features: ["4–5 concepts", "Source files"],
     },
     {
@@ -134,7 +140,8 @@ const pricingData = {
   WordPress: [
     {
       tier: "Basic",
-      price: 9999,
+      price: 11999,
+      displayPrice: "11,999+",
       features: ["4–5 pages", "Free theme", "Blog setup"],
     },
     {
@@ -150,7 +157,7 @@ const pricingData = {
     {
       tier: "Premium",
       price: 34999,
-      features: ["Full WP stack", "Optimization", "SEO"],
+      features: ["Speed optimization", "Security setup", "SEO audit"],
     },
   ],
   Shopify: [
@@ -201,24 +208,48 @@ const pricingData = {
     {
       tier: "Basic",
       price: 14999,
-      features: ["Simple 2D game (1–2 levels)", "Basic UI & graphics", "Mobile-friendly", "Basic sound effects"],
+      features: [
+        "Simple 2D game (1–2 levels)",
+        "Basic UI & graphics",
+        "Mobile-friendly",
+        "Basic sound effects",
+        "Ex. Flappy Bird"
+      ],
     },
     {
       tier: "Standard",
       price: 24999,
-      features: ["2D game (3–5 levels)", "Custom graphics & animations", "Scoreboard & basic achievements", "Android & iOS build"],
+      features: [
+        "2D game (3–5 levels)",
+        "Custom graphics & animations",
+        "Scoreboard & basic achievements",
+        "Android & iOS build",
+      ],
     },
     {
       tier: "Advanced",
       price: 39999,
-      features: ["2D/Basic 3D game (up to 10 levels)", "Story mode integration", "Multiplayer (local) support", "Custom music & sound design", "Play Store & App Store publishing"],
+      features: [
+        "2D/Basic 3D game (up to 10 levels)",
+        "Story mode integration",
+        "Multiplayer (local) support",
+        "Custom music & sound design",
+        "Play Store & App Store publishing",
+      ],
     },
     {
       tier: "Premium",
-      price: 69999,
-      features: ["Fully custom 3D game", "Multiplayer (online) with chat", "In-app purchases & ads integration", "Analytics & user tracking", "Ongoing support & updates"],
+      price: 149999,
+      displayPrice: "1,49,999+",
+      features: [
+        "Fully custom 3D game",
+        "Multiplayer (online) with chat",
+        "In-app purchases & ads integration",
+        "Analytics & user tracking",
+        "Ongoing support & updates",
+      ],
     },
-  ]
+  ],
 };
 
 const addOns = [
@@ -430,8 +461,12 @@ export default function PricingChart() {
                 {tier.tier}
               </h3>
               <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-300 mb-4">
-                ₹{tier.price.toLocaleString()}
+                ₹
+                {tier.displayPrice
+                  ? tier.displayPrice
+                  : tier.price.toLocaleString()}
               </p>
+
               <ul className="text-sm space-y-1 text-gray-800 dark:text-gray-200">
                 {tier.features.map((f, i) => (
                   <li key={i}>✔️ {f}</li>
@@ -538,12 +573,12 @@ export default function PricingChart() {
           </ul>
         </div>
 
-        <button
+        {/* <button
           onClick={handlePayment}
           className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-4 rounded-2xl font-bold text-lg shadow-xl hover:opacity-90 transition"
         >
           Proceed to Pay ₹{totalPrice.toLocaleString()}
-        </button>
+        </button> */}
       </motion.div>
     </>
   );
